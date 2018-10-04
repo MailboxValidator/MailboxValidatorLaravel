@@ -1,16 +1,10 @@
 <?php
 namespace MailboxValidatorLaravel\Validation;
 
-// Change package name to mbv-laravel/validation
-// Reconfigure the class to be more generic
-// Write sample code to show how to validate email at sign up page 
-// Write article after upload to github and composer to teach how to use this package
-
 class ValidateEmail{
-	// public static $errorMessage = 'The email '.$email.' is disposable email and should not been used to register.';
 	public static $errorMessage = 'This is a disposable email and should not been used to register.';
 	public $api_key;
-	// $api_key_global  = $_ENV['MBV_API_KEY'];
+	
 	function GetValidateDisposable($email,$api_key) {
 		if ($api_key == '') {
 			$api_key = env('MBV_API_KEY','1234');
@@ -48,11 +42,9 @@ class ValidateEmail{
 			// Called a function to return message for form validation
 			if (trim ($data['error_code']) == '' ) {
 				if ( $data['is_disposable'] == true ) {
-					// IsDisposable(true);
 					$errorMessage = 'The email '.$email.' is disposable email and should not been used to register.';
 					return false;
 				} else {
-					// IsDisposable(false);
 					return true;
 				}
 			} else {
