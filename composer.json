@@ -1,0 +1,33 @@
+{
+    "name": "MailboxValidatorLaravel/Validation",
+    "description": "Laravel package to validate an email by using MailboxValidator API.",
+	"type": "library",
+	"license": "LGPL-3.0",
+	"keywords": ["mailboxvalidator","email validation","laravel","disposable"],
+	"authors": [
+		{
+			"name": "MailboxValidator",
+			"email": "support@mailboxvalidator.com"
+		}
+	],
+    "require": {
+     },
+	"version": "1.0.0",
+    "autoload": {
+		"psr-4": {
+			"MailboxValidatorLaravel\\Validation\\": "src"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"MailboxValidatorLaravel\\Validation\\Test\\": "tests"
+		}
+	},
+	"extra": {
+		"laravel": {
+			"providers": [
+				"MailboxValidatorLaravel\\Validation\\ValidationServiceProvider"
+			]
+		}
+	}
+}
