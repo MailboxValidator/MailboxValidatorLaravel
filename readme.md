@@ -8,7 +8,7 @@ MailboxValidator Laravel Email Validation Package provides an easy way to call t
 
 The installation can be easily done by using the following command:
 
-`composer require mailboxvalidator-laravel/validation`
+`composer require MailboxValidatorLaravel`
 
 
 

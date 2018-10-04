@@ -18,6 +18,11 @@
 			"MailboxValidatorLaravel\\Validation\\": "src"
 		}
 	},
+	"autoload-dev": {
+		"psr-4": {
+			"MailboxValidatorLaravel\\Validation\\Test\\": "tests"
+		}
+	},
 	"extra": {
 		"laravel": {
 			"providers": [
