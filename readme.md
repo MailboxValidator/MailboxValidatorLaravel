@@ -6,9 +6,23 @@ MailboxValidator Laravel Email Validation Package provides an easy way to call t
 
 ## Installation
 
-The installation can be easily done by using the following command:
+Open the terminal, locate to your project root and run the following command :
 
 `composer require mailboxvalidator-laravel/validation`
+
+
+
+For Laravel versions below 5.5, you might need the additional step to make Laravel 
+discover the service provider. Open the `config/app.php` and add the 
+service provider manually into the providers section: 
+
+``MailboxValidatorLaravel\Validation\ValidationServiceProvider::class,``
+
+In the terminal, type the following command to publish the modified config file:
+
+``
+php artisan vendor:publish --provider=MailboxValidatorLaravel\Validation\ValidationServiceProvider --force
+``
 
 
 
@@ -22,7 +36,7 @@ Go to https://www.mailboxvalidator.com/plans#api to sign up for FREE API plan an
 
 ## Usage
 
-To use this package to validate the email coming from form submission, you will just need to include `'|disposable'`in Validator function in app\Http\Controllers\Auth\RegisterController.php . A step by step tutorial is included here. 
+To use this package to validate the email coming from form submission, you will just need to include `'|disposable'`in Validator function in app\Http\Controllers\Auth\RegisterController.php . A step by step tutorial is included [here](https://www.mailboxvalidator.com/resources/articles/how-to-use-mailboxvalidator-laravel-email-validation-package-to-validate-email-during-registration/). 
 
 To print the validation result on single email, you will first need to include this line on top of your file: `use MailboxValidatorLaravel\Validation\ValidateEmail;` . Then, initialite the ValidateEmail class by using this line: `$validate = new ValidateEmail();`. Lastly, just call `$validate->GetValidateDisposable('email_tobe_validate','your_api_key');`  into a variable and print out the variable.
 
