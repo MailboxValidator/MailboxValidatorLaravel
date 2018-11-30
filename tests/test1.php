@@ -9,9 +9,9 @@ class ValidationFunctionTest extends TestCase
      */
     public function testvalidateemail()
     {
-		$results = $validate->GetValidateDisposable('ooikaiwen@qq.com','TSGVXN7PLAU30SNAYAT4');
+		$results = $validate->GetValidateDisposable('test@example.com','PASTE_YOUR_API_KEY_HERE');
         $this->assertSame($results['is_disposable'], true);
-		$results1 = $validate->GetValidateDisposable('ooikaiwen@mailinator.com','TSGVXN7PLAU30SNAYAT4');
+		$results1 = $validate->GetValidateDisposable('test@example.com','PASTE_YOUR_API_KEY_HERE');
         $this->assertSame($results1['is_disposable'], true);
     }
 }
