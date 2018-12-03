@@ -32,6 +32,11 @@ An API key is required for this module to function.
 
 Go to https://www.mailboxvalidator.com/plans#api to sign up for FREE API plan and you'll be given an API key.
 
+After that, please save your API key in your web application environement file like this:
+``
+MBV_API_KEY = 'PASTE_YOUR_API_KEY_HERE'
+``
+
 
 
 ## Usage
