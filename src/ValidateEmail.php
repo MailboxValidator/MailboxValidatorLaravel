@@ -7,7 +7,7 @@ class ValidateEmail{
 	
 	function GetValidateDisposable($email,$api_key) {
 		if ($api_key == '') {
-			$api_key = env('MBV_API_KEY','1234');
+			$api_key = env('MBV_API_KEY');
 		}
 		try {
 			// Now we need to send the data to MBV API Key and return back the result.
@@ -30,7 +30,7 @@ class ValidateEmail{
 
 	function ValidateDisposable($email) {
 		if (!isset($api_key)) {
-			$api_key = env('MBV_API_KEY','1234');
+			$api_key = env('MBV_API_KEY');
 		}
 		try {
 			// Now we need to send the data to MBV API Key and return back the result.
