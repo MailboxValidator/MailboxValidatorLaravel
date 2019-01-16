@@ -28,14 +28,15 @@ class ValidateEmail{
 	}
 	
 
-	function ValidateDisposable($email) {
+	// $value holds the email address from the form.
+	function ValidateDisposable($attribute, $value, $parameters, $validator) {
 		if (!isset($api_key)) {
 			$api_key = env('MBV_API_KEY');
 		}
 		$source = 'laravel';
 		try {
 			// Now we need to send the data to MBV API Key and return back the result.
-			$results = file_get_contents('https://api.mailboxvalidator.com/v1/email/disposable?key=' . $api_key . '&email=' .$email. '&source=' .$source );
+			$results = file_get_contents('https://api.mailboxvalidator.com/v1/email/disposable?key=' . $api_key . '&email=' .$value. '&source=' .$source );
 			
 			// Decode the return json results and return the data as an array.
 			$data = json_decode($results,true);
@@ -43,7 +44,7 @@ class ValidateEmail{
 			// Called a function to return message for form validation
 			if (trim ($data['error_code']) == '' ) {
 				if ( $data['is_disposable'] == true ) {
-					$errorMessage = 'The email '.$email.' is disposable email and should not been used to register.';
+					$errorMessage = 'The email '.$value.' is disposable email and should not been used to register.';
 					return false;
 				} else {
 					return true;
