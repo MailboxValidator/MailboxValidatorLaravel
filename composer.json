@@ -12,7 +12,6 @@
 	],
     "require": {
      },
-	"version": "1.0.3",
     "autoload": {
 		"psr-4": {
 			"MailboxValidatorLaravel\\Validation\\": "src"
