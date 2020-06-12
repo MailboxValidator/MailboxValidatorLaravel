@@ -1,8 +1,8 @@
 {
-    "name": "MailboxValidatorLaravel/Validation",
+    "name": "mailboxvalidatorlaravel/validation",
     "description": "Laravel package to validate an email by using MailboxValidator API.",
 	"type": "library",
-	"license": "LGPL-3.0",
+	"license": "LGPL-3.0-or-later",
 	"keywords": ["laravel","mailboxvalidator","email validation","disposable"],
 	"authors": [
 		{
