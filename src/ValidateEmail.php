@@ -44,8 +44,8 @@ class ValidateEmail{
 			
 			// Called a function to return message for form validation
 			if (trim ($data['error_code']) == '' ) {
-				if ( $data['is_disposable'] == true ) {
-					$errorMessage = 'The email '.$value.' is disposable email and should not been used to register.';
+				if ( $data['is_disposable'] == 'True' ) {
+					// $errorMessage = 'The email '.$value.' is disposable email and should not been used to register.';
 					return false;
 				} else {
 					return true;
