@@ -9,7 +9,7 @@ This module can be useful in many types of projects, for example
  - to perform fraud check
  - and so on
 
-
+*Note: This extension works in Laravel 5, Laravel 6, Laravel 7 and Laravel 8.*
 
 ## Installation
 
@@ -85,4 +85,4 @@ To print the validation result on single email, you will first need to include t
 
 ## Copyright
 
-Copyright (C) 2018-2020 by MailboxValidator.com, support@mailboxvalidator.com
+Copyright (C) 2018-2021 by MailboxValidator.com, support@mailboxvalidator.com
