@@ -12,7 +12,7 @@ class ValidateEmail{
 		$source = 'laravel';
 		try {
 			// Now we need to send the data to MBV API Key and return back the result.
-			$results = file_get_contents('https://api.mailboxvalidator.com/v1/email/disposable?key=' . $api_key . '&email=' .$email. '&source=' .$source );
+			$results = file_get_contents('https://api.mailboxvalidator.com/v2/email/disposable?key=' . $api_key . '&email=' .$email. '&source=' .$source );
 			
 			if ($results == false) {
 				return 'Unknown error encounter. Please try again later.';
@@ -37,21 +37,21 @@ class ValidateEmail{
 		$source = 'laravel';
 		try {
 			// Now we need to send the data to MBV API Key and return back the result.
-			$results = file_get_contents('https://api.mailboxvalidator.com/v1/email/disposable?key=' . $api_key . '&email=' .$value. '&source=' .$source );
+			$results = file_get_contents('https://api.mailboxvalidator.com/v2/email/disposable?key=' . $api_key . '&email=' .$value. '&source=' .$source );
 			
 			// Decode the return json results and return the data as an array.
 			$data = json_decode($results,true);
 			
 			// Called a function to return message for form validation
-			if (trim ($data['error_code']) == '' ) {
-				if ( $data['is_disposable'] == 'True' ) {
+			if (! array_key_exists('error', $data)) {
+				if ( $data['is_disposable']) {
 					// $errorMessage = 'The email '.$value.' is disposable email and should not been used to register.';
 					return false;
 				} else {
 					return true;
 				}
 			} else {
-				return $data['error_code'] . $data['error_message'];
+				return $data['error']['error_code'] . $data['error']['error_message'];
 			}
 
 		} catch (Exception $e) {
