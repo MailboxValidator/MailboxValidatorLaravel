@@ -72,17 +72,18 @@ To print the validation result on single email, you will first need to include t
 
 ## Errors
 
-| error_code | error_message         |
-| ---------- | --------------------- |
-| 100        | Missing parameter.    |
-| 101        | API key not found.    |
-| 102        | API key disabled.     |
-| 103        | API key expired.      |
-| 104        | Insufficient credits. |
-| 105        | Unknown error.        |
+| error_code   | error_message         |
+| ----------   | --------------------- |
+| 10000        | Missing parameter.    |
+| 10001        | API key not found.    |
+| 10002        | API key disabled.     |
+| 10003        | API key expired.      |
+| 10004        | Insufficient credits. |
+| 10005        | Unknown error.        |
+| 10006        | Invalid email syntax. |
 
 
 
 ## Copyright
 
-Copyright (C) 2018-2022 by MailboxValidator.com, support@mailboxvalidator.com
+Copyright (C) 2018-2023 by MailboxValidator.com, support@mailboxvalidator.com
