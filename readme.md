@@ -86,4 +86,4 @@ To print the validation result on single email, you will first need to include t
 
 ## Copyright
 
-Copyright (C) 2018-2023 by MailboxValidator.com, support@mailboxvalidator.com
+Copyright (C) 2018-2024 by MailboxValidator.com, support@mailboxvalidator.com
