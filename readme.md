@@ -9,7 +9,7 @@ This module can be useful in many types of projects, for example
  - to perform fraud check
  - and so on
 
-*Note: This extension works in Laravel 5, Laravel 6, Laravel 7, Laravel 8 and Laravel 9.*
+*Note: This extension works in Laravel 5, Laravel 6, Laravel 7, Laravel 8, Laravel 9, Laravel 10 and Laravel 11.*
 
 ## Installation
 
@@ -68,7 +68,27 @@ Check the email address from the form and validate it whether is a disposable em
 
 To use this package to validate the email coming from form submission, you will just need to include `'|disposable'`in Validator function in app\Http\Controllers\Auth\RegisterController.php . A step by step tutorial is included [here](https://www.mailboxvalidator.com/resources/articles/how-to-use-mailboxvalidator-laravel-email-validation-package-to-validate-email-during-registration/). 
 
-To print the validation result on single email, you will first need to include this line on top of your file: `use MailboxValidatorLaravel\Validation\ValidateEmail;` . Then, initialite the ValidateEmail class by using this line: `$validate = new ValidateEmail();`. Lastly, just call `$validate->GetValidateDisposable('email_tobe_validate','your_api_key');`  into a variable and print out the variable.
+To print the validation result on single email, you will first need to include this line on top of your file: `use MailboxValidatorLaravel\Validation\ValidateEmail;` . Then, initialite the ValidateEmail class by using this line: `$validate = new ValidateEmail();`. Lastly, just call `$validate->GetValidateDisposable('email_tobe_validate','your_api_key');`  into a variable and print out the variable. For example, your controller file might be looks like this:
+
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use MailboxValidatorLaravel\Validation\ValidateEmail;
+
+class ViewValidateResultController extends Controller
+{
+	public function print_result(){
+		$validate = new ValidateEmail();
+		$validate_result = $validate->GetValidateDisposable('email_tobe_validate','your_api_key');
+		var_dump($validate_result);
+	}
+}
+
+
+```
 
 ## Errors
 
