@@ -15,7 +15,7 @@ This module can be useful in many types of projects, for example
 
 Open the terminal, locate to your project root and run the following command :
 
-````console
+```console
 composer require mailboxvalidator-laravel/validation
 ```
 
