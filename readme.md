@@ -9,13 +9,15 @@ This module can be useful in many types of projects, for example
  - to perform fraud check
  - and so on
 
-*Note: This extension works in Laravel 5, Laravel 6, Laravel 7, Laravel 8, Laravel 9, Laravel 10 and Laravel 11.*
+*Note: This extension works in Laravel 5, Laravel 6, Laravel 7, Laravel 8, Laravel 9, Laravel 10, Laravel 11 and Laravel 12.*
 
 ## Installation
 
 Open the terminal, locate to your project root and run the following command :
 
-`composer require mailboxvalidator-laravel/validation`
+````console
+composer require mailboxvalidator-laravel/validation
+```
 
 
 
@@ -27,9 +29,9 @@ service provider manually into the providers section:
 
 In the terminal, type the following command to publish the modified config file:
 
-``
+```console
 php artisan vendor:publish --provider=MailboxValidatorLaravel\Validation\ValidationServiceProvider --force
-``
+```
 
 
 
@@ -40,9 +42,10 @@ An API key is required for this module to function.
 Go to https://www.mailboxvalidator.com/plans#api to sign up for FREE API plan and you'll be given an API key.
 
 After that, please save your API key in your web application environement file like this:
-``
+
+```
 MBV_API_KEY = 'PASTE_YOUR_API_KEY_HERE'
-``
+```
 
 ## Functions
 
@@ -66,7 +69,7 @@ Check the email address from the form and validate it whether is a disposable em
 
 ## Usage
 
-To use this package to validate the email coming from form submission, you will just need to include `'|disposable'`in Validator function in app\Http\Controllers\Auth\RegisterController.php . A step by step tutorial is included [here](https://www.mailboxvalidator.com/resources/articles/how-to-use-mailboxvalidator-laravel-email-validation-package-to-validate-email-during-registration/). 
+To use this package to validate the email coming from form submission, you will just need to include `'|disposable'`in Validator function in `app\Http\Controllers\Auth\RegisterController.php` . A step by step tutorial is included [here](https://www.mailboxvalidator.com/resources/articles/how-to-use-mailboxvalidator-laravel-email-validation-package-to-validate-email-during-registration/). 
 
 To print the validation result on single email, you will first need to include this line on top of your file: `use MailboxValidatorLaravel\Validation\ValidateEmail;` . Then, initialite the ValidateEmail class by using this line: `$validate = new ValidateEmail();`. Lastly, just call `$validate->GetValidateDisposable('email_tobe_validate','your_api_key');`  into a variable and print out the variable. For example, your controller file might be looks like this:
 
@@ -106,4 +109,4 @@ class ViewValidateResultController extends Controller
 
 ## Copyright
 
-Copyright (C) 2018-2024 by MailboxValidator.com, support@mailboxvalidator.com
+Copyright (C) 2018-2025 by MailboxValidator.com, support@mailboxvalidator.com
